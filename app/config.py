@@ -6,12 +6,12 @@ class Config:
     DEBUG = False
     TESTING = False
     SESSION_COOKIE_SECURE = True
-    SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://favorit1_root:ug%qdnd4[maV@localhost:3306/favorit1_database"
+    SQLALCHEMY_DATABASE_URI = "DATABASE URI"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    MONGO_URI = 'mongodb+srv://stink:ihj5BxK8xsbNxUho@cafedb.08ofdiv.mongodb.net/?retryWrites=true&w=majority'
+    MONGO_URI = 'MONGODB URI'
     FLASK_ADMIN_SWATCH = 'cerulean'
-    BASIC_AUTH_USERNAME = 'Admin'
-    BASIC_AUTH_PASSWORD = 'Tool789789@'
+    BASIC_AUTH_USERNAME = 'admin'
+    BASIC_AUTH_PASSWORD = 'password'
     JSON_AS_ASCII = True
     JSON_SORT_KEYS = True
     PROPAGATE_EXCEPTIONS = True
@@ -23,10 +23,10 @@ class Config:
     IJSONFY_MIMETYPE = 'application/json'
 
     SECRET_KEY = "b'\xf1L\xdb5D\x96M\xe5\xd1\x9f\x16+\xf4%A\x1e\xb9\xafm\xb8g\x1ct\x0e'"
-    MAIL_SERVER = "everest.pws-dns.net"
-    HOST_NAME = "162.55.4.44"
-    MAIL_USERNAME = "info@favoritecafe.ir"
-    MAIL_PASSWORD = "Tool789789Tool"
+    MAIL_SERVER = "mail server"
+    HOST_NAME = "server ip"
+    MAIL_USERNAME = "email@email.com"
+    MAIL_PASSWORD = "email password"
     MAIL_PORT = 465
     MAIL_DEBUG = False
     MAIL_USE_SSL = True
