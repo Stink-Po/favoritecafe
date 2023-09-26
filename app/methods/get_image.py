@@ -1,7 +1,7 @@
 from pexels_api import API
 import random
 
-PEXELS_API_KEY = "Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI"
+PEXELS_API_KEY = "API KEY"
 
 
 class GetPhoto:
