@@ -11,7 +11,7 @@ class NewsService:
         self.filename = os.path.join(Config.NEWS_PATH, f'news{self.today}.json')
         self.url = 'http://api.mediastack.com/v1/news'
         self.params = {
-            'access_key': '8ef9d07c9fde1d9b042fb4f3779704f3',
+            'access_key': 'NEW API Key',
             'languages': 'en',
             'sort': 'published_desc',
             'limit': 50,
