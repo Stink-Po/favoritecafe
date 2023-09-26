@@ -1,0 +1,1942 @@
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/favorit1/project_d/app/error_handeler.py", line 21, in handle_exception
+    return render_template("error/error.html", title=e,
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 737, in update_template_context
+    context.update(func())
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/home/favorit1/project_d/app/__init__.py", line 45, in load_user
+    user = User.query.get(user_id)
+  File "<string>", line 2, in get
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+    return db_load_fn(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 677, in load_on_pk_identity
+    return result.one()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 1822, in one
+    return self._only_one_row(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 757, in _only_one_row
+    row: Optional[_InterimRowType[Any]] = onerow(hard_close=True)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 1685, in _fetchone_impl
+    return self._real_result._fetchone_impl(hard_close=hard_close)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 2277, in _fetchone_impl
+    row = next(self.iterator, _NO_ROW)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 191, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 544, in _raw_all_rows
+    make_row = self._row_getter
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 1256, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 477, in _row_getter
+    key_to_index = metadata._key_to_index
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 1358, in _key_to_index
+    self._we_dont_return_rows()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 1338, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Commands out of sync; you can't run this command now
+[ERROR] [UID:1597][65979] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/favorit1/project_d/app/error_handeler.py", line 21, in handle_exception
+    return render_template("error/error.html", title=e,
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 737, in update_template_context
+    context.update(func())
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/home/favorit1/project_d/app/__init__.py", line 45, in load_user
+    user = User.query.get(user_id)
+  File "<string>", line 2, in get
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+    return db_load_fn(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 677, in load_on_pk_identity
+    return result.one()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 1822, in one
+    return self._only_one_row(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 757, in _only_one_row
+    row: Optional[_InterimRowType[Any]] = onerow(hard_close=True)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 1685, in _fetchone_impl
+    return self._real_result._fetchone_impl(hard_close=hard_close)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 2277, in _fetchone_impl
+    row = next(self.iterator, _NO_ROW)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 191, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 544, in _raw_all_rows
+    make_row = self._row_getter
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 1256, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/result.py", line 477, in _row_getter
+    key_to_index = metadata._key_to_index
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 1358, in _key_to_index
+    self._we_dont_return_rows()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 1338, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+None
+Error closing cursor
+ValueError: invalid literal for int() with base 10: 'st'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 342, in execute
+    self._handle_result(result)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 230, in _handle_result
+    self._handle_resultset()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 788, in _handle_resultset
+    self._rows = self._cnx.get_rows()[0]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 449, in get_rows
+    row = fetch_row()
+SystemError: <built-in method fetch_row of _mysql_connector.MySQL object at 0x1e58fd0> returned a result with an exception set
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2199, in _safe_close_cursor
+    cursor.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 495, in close
+    self._cnx.handle_unread_result()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 955, in handle_unread_result
+    raise InternalError("Unread result found")
+mysql.connector.errors.InternalError: Unread result found
+[ERROR] [UID:1597][527553] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2206, in wsgi_app
+    ctx.pop(error)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 417, in pop
+    app_ctx.pop(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 255, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2063, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 417, in _teardown_session
+    self.session.remove()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2397, in close
+    self._close_impl(invalidate=False)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2439, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1342, in close
+    transaction.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2572, in close
+    self._do_close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2710, in _do_close
+    self._close_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2696, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2688, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1117, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1115, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2157734] Child process with pid: 2158055 was killed by signal: 15, core dumped: no
+None
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+None
+None
+OSError: LSAPI: File error
+[UID:1597][3003826] Child process with pid: 3008957 was killed by signal: 15, core dumped: no
+None
+True
+[ERROR] [UID:1597][1042507] Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Commands out of sync; you can't run this command now
+wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2206, in wsgi_app
+    ctx.pop(error)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 417, in pop
+    app_ctx.pop(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 255, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2063, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 417, in _teardown_session
+    self.session.remove()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2397, in close
+    self._close_impl(invalidate=False)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2439, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1342, in close
+    transaction.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2572, in close
+    self._do_close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2710, in _do_close
+    self._close_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2696, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2688, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1117, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1115, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+None
+Error closing cursor
+ValueError: invalid literal for int() with base 10: 'favorit1_database'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 342, in execute
+    self._handle_result(result)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 230, in _handle_result
+    self._handle_resultset()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 788, in _handle_resultset
+    self._rows = self._cnx.get_rows()[0]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 437, in get_rows
+    row = fetch_row()
+SystemError: <built-in method fetch_row of _mysql_connector.MySQL object at 0x35eece0> returned a result with an exception set
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2199, in _safe_close_cursor
+    cursor.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 495, in close
+    self._cnx.handle_unread_result()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 955, in handle_unread_result
+    raise InternalError("Unread result found")
+mysql.connector.errors.InternalError: Unread result found
+[UID:1597][1542733] Child process with pid: 1542747 was killed by signal: 15, core dumped: no
+[UID:1597][1542733] Child process with pid: 1542748 was killed by signal: 15, core dumped: no
+[UID:1597][1542733] Child process with pid: 1542809 was killed by signal: 15, core dumped: no
+[UID:1597][1542733] Child process with pid: 1542808 was killed by signal: 15, core dumped: no
+[UID:1597][1542733] Child process with pid: 1543160 was killed by signal: 15, core dumped: no
+[ERROR] [UID:1597][1543177] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2206, in wsgi_app
+    ctx.pop(error)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 417, in pop
+    app_ctx.pop(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 255, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2063, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 417, in _teardown_session
+    self.session.remove()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2397, in close
+    self._close_impl(invalidate=False)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2439, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1342, in close
+    transaction.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2572, in close
+    self._do_close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2710, in _do_close
+    self._close_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2696, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2688, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1117, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1115, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+None
+0
+None
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Disk full (/tmp/#sql-temptable-28a0a9-26c85-0.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1021 (HY000): Disk full (/tmp/#sql-temptable-28a0a9-26c85-0.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 73, in <module>
+    db.create_all()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 887, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 868, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5792, in create_all
+    bind._run_ddl_visitor(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 3239, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2443, in _run_ddl_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/visitors.py", line 670, in traverse_single
+    return meth(obj, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in visit_metadata
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in <listcomp>
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 866, in _can_create_table
+    return not self.checkfirst or not self.dialect.has_table(
+  File "<string>", line 2, in has_table
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/reflection.py", line 88, in cache
+    return fn(self, con, *args, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/dialects/mysql/base.py", line 2706, in has_table
+    with connection.exec_driver_sql(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1774, in exec_driver_sql
+    ret = self._execute_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 1021 (HY000): Disk full (/tmp/#sql-temptable-28a0a9-26c85-0.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+[SQL: DESCRIBE `favorit1_database`.`cafe`]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 57, in <module>
+    admin = Admin(app,name='panel', index_view=MyHomeView(), template_mode='bootstrap4')
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 525, in __init__
+    self._set_admin_index_view(index_view=index_view, endpoint=endpoint, url=url)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 570, in _set_admin_index_view
+    self.add_view(self.index_view)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 543, in add_view
+    self.app.register_blueprint(view.create_blueprint(self))
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/scaffold.py", line 51, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 997, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 310, in register
+    raise ValueError(
+ValueError: The name 'admin' is already registered for a different blueprint. Use 'name=' to provide a unique name.
+[UID:1597][3943916] Child process with pid: 3944012 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Can't change size of file (Errcode: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 14 (HY000): Can't change size of file (Errcode: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 73, in <module>
+    db.create_all()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 887, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 868, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5792, in create_all
+    bind._run_ddl_visitor(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 3239, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2443, in _run_ddl_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/visitors.py", line 670, in traverse_single
+    return meth(obj, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in visit_metadata
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in <listcomp>
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 866, in _can_create_table
+    return not self.checkfirst or not self.dialect.has_table(
+  File "<string>", line 2, in has_table
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/reflection.py", line 88, in cache
+    return fn(self, con, *args, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/dialects/mysql/base.py", line 2706, in has_table
+    with connection.exec_driver_sql(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1774, in exec_driver_sql
+    ret = self._execute_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 14 (HY000): Can't change size of file (Errcode: 28 "No space left on device")
+[SQL: DESCRIBE `favorit1_database`.`cafe`]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 57, in <module>
+    admin = Admin(app,name='panel', index_view=MyHomeView(), template_mode='bootstrap4')
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 525, in __init__
+    self._set_admin_index_view(index_view=index_view, endpoint=endpoint, url=url)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 570, in _set_admin_index_view
+    self.add_view(self.index_view)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 543, in add_view
+    self.app.register_blueprint(view.create_blueprint(self))
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/scaffold.py", line 51, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 997, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 310, in register
+    raise ValueError(
+ValueError: The name 'admin' is already registered for a different blueprint. Use 'name=' to provide a unique name.
+[UID:1597][4022773] Child process with pid: 4022787 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 57, in <module>
+    admin = Admin(app,name='panel', index_view=MyHomeView(), template_mode='bootstrap4')
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 525, in __init__
+    self._set_admin_index_view(index_view=index_view, endpoint=endpoint, url=url)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 570, in _set_admin_index_view
+    self.add_view(self.index_view)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 543, in add_view
+    self.app.register_blueprint(view.create_blueprint(self))
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/scaffold.py", line 51, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 997, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 310, in register
+    raise ValueError(
+ValueError: The name 'admin' is already registered for a different blueprint. Use 'name=' to provide a unique name.
+[UID:1597][4022773] Child process with pid: 4036545 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Disk full (/tmp/#sql-temptable-28a0a9-29034-63.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1021 (HY000): Disk full (/tmp/#sql-temptable-28a0a9-29034-63.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 73, in <module>
+    db.create_all()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 887, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 868, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5792, in create_all
+    bind._run_ddl_visitor(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 3239, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2443, in _run_ddl_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/visitors.py", line 670, in traverse_single
+    return meth(obj, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in visit_metadata
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in <listcomp>
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 866, in _can_create_table
+    return not self.checkfirst or not self.dialect.has_table(
+  File "<string>", line 2, in has_table
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/reflection.py", line 88, in cache
+    return fn(self, con, *args, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/dialects/mysql/base.py", line 2706, in has_table
+    with connection.exec_driver_sql(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1774, in exec_driver_sql
+    ret = self._execute_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 1021 (HY000): Disk full (/tmp/#sql-temptable-28a0a9-29034-63.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+[SQL: DESCRIBE `favorit1_database`.`cafe`]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 57, in <module>
+    admin = Admin(app,name='panel', index_view=MyHomeView(), template_mode='bootstrap4')
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 525, in __init__
+    self._set_admin_index_view(index_view=index_view, endpoint=endpoint, url=url)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 570, in _set_admin_index_view
+    self.add_view(self.index_view)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 543, in add_view
+    self.app.register_blueprint(view.create_blueprint(self))
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/scaffold.py", line 51, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 997, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 310, in register
+    raise ValueError(
+ValueError: The name 'admin' is already registered for a different blueprint. Use 'name=' to provide a unique name.
+[UID:1597][4091851] Child process with pid: 4091930 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Disk full (/tmp/#sql-temptable-28a0a9-299b9-0.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1021 (HY000): Disk full (/tmp/#sql-temptable-28a0a9-299b9-0.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 73, in <module>
+    db.create_all()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 887, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 868, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5792, in create_all
+    bind._run_ddl_visitor(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 3239, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2443, in _run_ddl_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/visitors.py", line 670, in traverse_single
+    return meth(obj, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in visit_metadata
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in <listcomp>
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 866, in _can_create_table
+    return not self.checkfirst or not self.dialect.has_table(
+  File "<string>", line 2, in has_table
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/reflection.py", line 88, in cache
+    return fn(self, con, *args, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/dialects/mysql/base.py", line 2706, in has_table
+    with connection.exec_driver_sql(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1774, in exec_driver_sql
+    ret = self._execute_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 1021 (HY000): Disk full (/tmp/#sql-temptable-28a0a9-299b9-0.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+[SQL: DESCRIBE `favorit1_database`.`cafe`]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 57, in <module>
+    admin = Admin(app,name='panel', index_view=MyHomeView(), template_mode='bootstrap4')
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 525, in __init__
+    self._set_admin_index_view(index_view=index_view, endpoint=endpoint, url=url)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 570, in _set_admin_index_view
+    self.add_view(self.index_view)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 543, in add_view
+    self.app.register_blueprint(view.create_blueprint(self))
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/scaffold.py", line 51, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 997, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 310, in register
+    raise ValueError(
+ValueError: The name 'admin' is already registered for a different blueprint. Use 'name=' to provide a unique name.
+[UID:1597][4152236] Child process with pid: 4152276 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 633, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Disk full (/tmp/#sql-temptable-28a0a9-2ac84-4.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1021 (HY000): Disk full (/tmp/#sql-temptable-28a0a9-2ac84-4.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 73, in <module>
+    db.create_all()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 887, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 868, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5792, in create_all
+    bind._run_ddl_visitor(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 3239, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2443, in _run_ddl_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/visitors.py", line 670, in traverse_single
+    return meth(obj, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in visit_metadata
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 901, in <listcomp>
+    [t for t in tables if self._can_create_table(t)]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/ddl.py", line 866, in _can_create_table
+    return not self.checkfirst or not self.dialect.has_table(
+  File "<string>", line 2, in has_table
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/reflection.py", line 88, in cache
+    return fn(self, con, *args, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/dialects/mysql/base.py", line 2706, in has_table
+    with connection.exec_driver_sql(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1774, in exec_driver_sql
+    ret = self._execute_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 641, in cmd_query
+    raise get_mysql_exception(
+sqlalchemy.exc.DatabaseError: (mysql.connector.errors.DatabaseError) 1021 (HY000): Disk full (/tmp/#sql-temptable-28a0a9-2ac84-4.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+[SQL: DESCRIBE `favorit1_database`.`cafe`]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+Traceback (most recent call last):
+  File "/home/favorit1/project_d/passenger_wsgi.py", line 1, in <module>
+    from app import app as application
+  File "/home/favorit1/project_d/app/__init__.py", line 57, in <module>
+    admin = Admin(app,name='panel', index_view=MyHomeView(), template_mode='bootstrap4')
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 525, in __init__
+    self._set_admin_index_view(index_view=index_view, endpoint=endpoint, url=url)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 570, in _set_admin_index_view
+    self.add_view(self.index_view)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_admin/base.py", line 543, in add_view
+    self.app.register_blueprint(view.create_blueprint(self))
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/scaffold.py", line 51, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 997, in register_blueprint
+    blueprint.register(self, options)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/blueprints.py", line 310, in register
+    raise ValueError(
+ValueError: The name 'admin' is already registered for a different blueprint. Use 'name=' to provide a unique name.
+[UID:1597][31028] Child process with pid: 31044 was killed by signal: 15, core dumped: no
+[UID:1597][4046691] Child process with pid: 4046819 was killed by signal: 15, core dumped: no
+[UID:1597][4046691] Child process with pid: 4047481 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1597][4046691] Child process with pid: 4047729 was killed by signal: 15, core dumped: no
+0
+Error closing cursor
+ValueError: invalid literal for int() with base 10: 'he '
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 342, in execute
+    self._handle_result(result)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 230, in _handle_result
+    self._handle_resultset()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 788, in _handle_resultset
+    self._rows = self._cnx.get_rows()[0]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 449, in get_rows
+    row = fetch_row()
+SystemError: <built-in method fetch_row of _mysql_connector.MySQL object at 0x1dc9870> returned a result with an exception set
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2199, in _safe_close_cursor
+    cursor.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 495, in close
+    self._cnx.handle_unread_result()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 955, in handle_unread_result
+    raise InternalError("Unread result found")
+mysql.connector.errors.InternalError: Unread result found
+[ERROR] [UID:1597][925734] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2206, in wsgi_app
+    ctx.pop(error)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 417, in pop
+    app_ctx.pop(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 255, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2063, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 417, in _teardown_session
+    self.session.remove()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2397, in close
+    self._close_impl(invalidate=False)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2439, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1342, in close
+    transaction.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2572, in close
+    self._do_close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2710, in _do_close
+    self._close_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2696, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2688, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1117, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1115, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+[ERROR] [UID:1597][1308408] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2206, in wsgi_app
+    ctx.pop(error)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 417, in pop
+    app_ctx.pop(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 255, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2063, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 417, in _teardown_session
+    self.session.remove()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2397, in close
+    self._close_impl(invalidate=False)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2439, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1342, in close
+    transaction.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2572, in close
+    self._do_close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2710, in _do_close
+    self._close_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2696, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2688, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1117, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1115, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1308400] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+OSError: LSAPI: File error
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2709970] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[ERROR] [UID:1597][1613390] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1634116] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1634123] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1634263] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1634264] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1634268] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1634456] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1634458] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1634461] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1635150] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1635159] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1635186] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1785393] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1787866] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1787890] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1788453] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1788550] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][1788579] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [401]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+OSError: LSAPI: File error
+0
+0
+0
+https://favoritecafe.ir/confirm_email/ImZyZXNoLnBvdXJ5YUBnbWFpbC5jb20i.ZOpNgg.mhODgoKdiuxbA0QNGJH7kffrY7A
+https://favoritecafe.ir/confirm_email/ImZyZXNoLnBvdXJ5YUBnbWFpbC5jb20i.ZOpNgg.mhODgoKdiuxbA0QNGJH7kffrY7A
+https://favoritecafe.ir/confirm_email/ImZyZXNoLnBvdXJ5YUBnbWFpbC5jb20i.ZOpN7A.OJpzBMYJmY_y6bfRZojDck4K_rM
+https://favoritecafe.ir/confirm_email/ImZyZXNoLnBvdXJ5YUBnbWFpbC5jb20i.ZOpN7A.OJpzBMYJmY_y6bfRZojDck4K_rM
+[ERROR] [UID:1597][3614940] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/favorit1/project_d/app/methods/decorators.py", line 12, in decorated_function
+    return f(*args, **kwargs)
+  File "/home/favorit1/project_d/app/private_views/new_cafe/add_new_cafe_view.py", line 111, in add_cafe
+    counting.add_new_cafe(cafe=cafe_manager.new_cafe)
+  File "/home/favorit1/project_d/app/methods/counting_news.py", line 16, in add_new_cafe
+    new_count = NewCount.query.first()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 2747, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2120, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/context.py", line 543, in orm_pre_session_exec
+    session._autoflush()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2912, in _autoflush
+    self.flush()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4163, in flush
+    self._flush(objects)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4298, in _flush
+    with util.safe_reraise():
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+    flush_context.execute()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 317, in execute
+    prepared = self._cnx.prepare_for_mysql(params)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 814, in prepare_for_mysql
+    result[key] = self._cmysql.convert_to_mysql(value)[0]
+_mysql_connector.MySQLInterfaceError: Python type ObjectId cannot be converted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1348, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/favorit1/project_d/app/error_handeler.py", line 21, in handle_exception
+    return render_template("error/error.html", title=e,
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/favorit1/project_d/app/templates/error/error.html", line 1, in top-level template code
+    {% extends "header.html" %}
+  File "/home/favorit1/project_d/app/templates/header.html", line 104, in top-level template code
+    {{ user.username }}
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 563, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 1083, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 1113, in _fire_loader_callables
+    return state._load_expired(state, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state.py", line 798, in _load_expired
+    self.manager.expired_attribute_loader(self, toload, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 1617, in load_scalar_attributes
+    result = load_on_ident(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 481, in load_on_ident
+    return load_on_pk_identity(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: Python type ObjectId cannot be converted (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[ERROR] [UID:1597][3614938] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/favorit1/project_d/app/methods/decorators.py", line 12, in decorated_function
+    return f(*args, **kwargs)
+  File "/home/favorit1/project_d/app/private_views/new_cafe/add_new_cafe_view.py", line 111, in add_cafe
+    counting.add_new_cafe(cafe=cafe_manager.new_cafe)
+  File "/home/favorit1/project_d/app/methods/counting_news.py", line 16, in add_new_cafe
+    new_count = NewCount.query.first()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 2747, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2120, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/context.py", line 543, in orm_pre_session_exec
+    session._autoflush()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2912, in _autoflush
+    self.flush()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4163, in flush
+    self._flush(objects)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4298, in _flush
+    with util.safe_reraise():
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+    flush_context.execute()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 317, in execute
+    prepared = self._cnx.prepare_for_mysql(params)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 814, in prepare_for_mysql
+    result[key] = self._cmysql.convert_to_mysql(value)[0]
+_mysql_connector.MySQLInterfaceError: Python type ObjectId cannot be converted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1348, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/favorit1/project_d/app/error_handeler.py", line 21, in handle_exception
+    return render_template("error/error.html", title=e,
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/favorit1/project_d/app/templates/error/error.html", line 1, in top-level template code
+    {% extends "header.html" %}
+  File "/home/favorit1/project_d/app/templates/header.html", line 104, in top-level template code
+    {{ user.username }}
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 563, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 1083, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 1113, in _fire_loader_callables
+    return state._load_expired(state, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state.py", line 798, in _load_expired
+    self.manager.expired_attribute_loader(self, toload, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 1617, in load_scalar_attributes
+    result = load_on_ident(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 481, in load_on_ident
+    return load_on_pk_identity(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: Python type ObjectId cannot be converted (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[UID:1597][1564693] Child process with pid: 1564737 was killed by signal: 15, core dumped: no
+[UID:1597][1564693] Child process with pid: 1564736 was killed by signal: 15, core dumped: no
+[ERROR] [UID:1597][1565063] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/favorit1/project_d/app/methods/decorators.py", line 12, in decorated_function
+    return f(*args, **kwargs)
+  File "/home/favorit1/project_d/app/private_views/new_cafe/add_new_cafe_view.py", line 111, in add_cafe
+    counting.add_new_cafe(cafe=cafe_manager.new_cafe)
+  File "/home/favorit1/project_d/app/methods/counting_news.py", line 16, in add_new_cafe
+    new_count = NewCount.query.first()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 2747, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2120, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/context.py", line 543, in orm_pre_session_exec
+    session._autoflush()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2912, in _autoflush
+    self.flush()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4163, in flush
+    self._flush(objects)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4298, in _flush
+    with util.safe_reraise():
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+    flush_context.execute()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 317, in execute
+    prepared = self._cnx.prepare_for_mysql(params)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 814, in prepare_for_mysql
+    result[key] = self._cmysql.convert_to_mysql(value)[0]
+_mysql_connector.MySQLInterfaceError: Python type ObjectId cannot be converted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 1348, in handle_user_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/favorit1/project_d/app/error_handeler.py", line 21, in handle_exception
+    return render_template("error/error.html", title=e,
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/favorit1/project_d/app/templates/error/error.html", line 1, in top-level template code
+    {% extends "header.html" %}
+  File "/home/favorit1/project_d/app/templates/header.html", line 104, in top-level template code
+    {{ user.username }}
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 563, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 1083, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/attributes.py", line 1113, in _fire_loader_callables
+    return state._load_expired(state, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state.py", line 798, in _load_expired
+    self.manager.expired_attribute_loader(self, toload, passive)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 1617, in load_scalar_attributes
+    result = load_on_ident(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 481, in load_on_ident
+    return load_on_pk_identity(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: Python type ObjectId cannot be converted (Background on this error at: https://sqlalche.me/e/20/7s2a)
+("'NoneType' object has no attribute 'items'",)
+("'NoneType' object has no attribute 'items'",)
+("'NoneType' object has no attribute 'items'",)
+("'NoneType' object has no attribute 'items'",)
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Commands out of sync; you can't run this command now
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3228298] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+Error closing cursor
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 342, in execute
+    self._handle_result(result)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 230, in _handle_result
+    self._handle_resultset()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 788, in _handle_resultset
+    self._rows = self._cnx.get_rows()[0]
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 449, in get_rows
+    row = fetch_row()
+SystemError: <built-in method fetch_row of _mysql_connector.MySQL object at 0x2e2f3c0> returned a result with an exception set
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2199, in _safe_close_cursor
+    cursor.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/cursor_cext.py", line 495, in close
+    self._cnx.handle_unread_result()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 955, in handle_unread_result
+    raise InternalError("Unread result found")
+mysql.connector.errors.InternalError: Unread result found
+[ERROR] [UID:1597][1539445] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2206, in wsgi_app
+    ctx.pop(error)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 417, in pop
+    app_ctx.pop(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 255, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2063, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 417, in _teardown_session
+    self.session.remove()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2397, in close
+    self._close_impl(invalidate=False)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2439, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1342, in close
+    transaction.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2572, in close
+    self._do_close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2710, in _do_close
+    self._close_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2696, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2688, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1117, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1115, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+[ERROR] [UID:1597][1539240] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2206, in wsgi_app
+    ctx.pop(error)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 417, in pop
+    app_ctx.pop(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/ctx.py", line 255, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask/app.py", line 2063, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 417, in _teardown_session
+    self.session.remove()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2397, in close
+    self._close_impl(invalidate=False)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 2439, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/orm/session.py", line 1342, in close
+    transaction.close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2572, in close
+    self._do_close()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2710, in _do_close
+    self._close_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2696, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2688, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1117, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/base.py", line 1115, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/pool/base.py", line 1436, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/sqlalchemy/engine/default.py", line 691, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/favorit1/virtualenv/project_d/3.10/lib64/python3.10/site-packages/mysql/connector/connection_cext.py", line 517, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+[UID:1597][1229592] Child process with pid: 1229608 was killed by signal: 15, core dumped: no
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][3253961] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+("'NoneType' object has no attribute 'items'",)
+("'NoneType' object has no attribute 'items'",)
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3754475] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2945645] Child process with pid: 2958400 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 6, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][659882] Child process with pid: 665258 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+("'NoneType' object has no attribute 'items'",)
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2657421] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][583308] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][2130181] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][3494296] Child process with pid: 3494369 was killed by signal: 15, core dumped: no
+[UID:1597][3494296] Child process with pid: 3494370 was killed by signal: 15, core dumped: no
+OSError: LSAPI: File error
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 8, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+[UID:1597][1031895] Reached max children process limit: 6, extra: 2, current: 8, busy: 7, please increase LSAPI_CHILDREN.
+OSError: LSAPI: File error
+("'NoneType' object has no attribute 'items'",)
+[ERROR] [UID:1597][1207066] wsgiAppHandler pApp->start_response() return NULL.
+Request failed check your internet connection
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+[ERROR] [UID:1597][11339] wsgiAppHandler pApp->start_response() return NULL.
+("'NoneType' object has no attribute 'items'",)
+Request failed check your internet connection
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+("'NoneType' object has no attribute 'items'",)
+("'NoneType' object has no attribute 'items'",)
+OSError: LSAPI: File error
+("'NoneType' object has no attribute 'items'",)
+[ERROR] [UID:1597][3359067] wsgiAppHandler pApp->start_response() return NULL.
+Wrong response you might have a wrong API key
+<Response [502]>
+API key: {'Authorization': 'Kr5hV0DJC4C7U7LynkwbICc8LfmFOYznlksvlrGKodmijrlfeCBMUerI'}
+[ERROR] [UID:1597][577761] wsgiAppHandler pApp->start_response() return NULL.
+Request failed check your internet connection
+OSError: LSAPI: File error
+OSError: LSAPI: File error
+("'NoneType' object has no attribute 'items'",)
+OSError: LSAPI: File error
+[ERROR] [UID:1597][378026] wsgiAppHandler pApp->start_response() return NULL.
+Request failed check your internet connection
+[ERROR] [UID:1597][254713] wsgiAppHandler pApp->start_response() return NULL.
+Request failed check your internet connection
+[UID:1597][1500440] Child process with pid: 390298 was killed by signal: 15, core dumped: no
+[ERROR] [UID:1597][390136] wsgiAppHandler pApp->start_response() return NULL.
+Request failed check your internet connection
+[ERROR] [UID:1597][415326] wsgiAppHandler pApp->start_response() return NULL.
+Request failed check your internet connection

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /nogooglebot/
+Crawl-delay: 120
+Disallow: /cgi-bin/
+Sitemap: https://favoritecafe.ir/sitemap.xml
